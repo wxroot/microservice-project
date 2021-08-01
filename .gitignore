@@ -3,6 +3,7 @@
 
 #Project output
 **/target/
+*.iml
 
 #Log ignore
 *.log

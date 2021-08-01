@@ -18,6 +18,7 @@
     </developers>
 
     <properties>
+        <project.build.encoding>utf-8</project.build.encoding>
         <maven.compiler.source>8</maven.compiler.source>
         <maven.compiler.target>8</maven.compiler.target>
         <spring.cloud.version>2.1.2.RELEASE</spring.cloud.version>
@@ -101,6 +102,11 @@
                 <artifactId>spring-cloud-starter-netflix-hystrix-dashboard</artifactId>
                 <version>${spring.cloud.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-netflix-zuul</artifactId>
+                <version>${spring.cloud.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
@@ -126,6 +132,7 @@
         <module>microservice-basic-8003</module>
         <module>microservice-consumer-8080</module>
         <module>microservice-hystrix-monitor-8000</module>
+        <module>microservice-zuul-9000</module>
     </modules>
 
 </project>

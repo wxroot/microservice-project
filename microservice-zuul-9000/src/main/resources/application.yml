@@ -1,0 +1,32 @@
+server:
+  port: 9000
+spring:
+  application:
+    name: APPLICATION-ZUUL-9000
+eureka:
+  instance:
+    #主机名称
+    hostname: MicroserviceZuul9000.com
+    #是否首选IP地址
+    prefer-ip-address: true
+    #应用名称：【Application】取值，优先于${spring.application.name}
+    appname: APPNAME_ZUUL_9000
+    #实例ID：【Status】取值
+    instance-id: INSTANCE_ZUUL_9000
+  client:
+    #是否启用eureka客户端
+    enabled: true
+    #是否拉取注册表
+    fetch-registry: true
+    #是否注册服务
+    register-with-eureka: true
+    #注册中心地址
+    service-url:
+      defaultZone: http://MicroserviceRegistry7001.com:7001/eureka,http://MicroserviceRegistry7002.com:7002/eureka,http://MicroserviceRegistry7003.com:7003/eureka
+zuul:
+  #不能为 /zuul，否则和${zuul.servlet-path}冲突，因为后者默认就是/zuul
+#  prefix: /zuul
+  routes:
+    basic:
+      path: /basic/**
+      serviceId: APPLICATION-BASIC-8001

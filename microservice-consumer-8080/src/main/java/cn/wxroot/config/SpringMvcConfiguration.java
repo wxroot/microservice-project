@@ -28,8 +28,8 @@ public class SpringMvcConfiguration {
     }
 
     @Bean
-    public ServletRegistrationBean servletRegistrationBean(){
+    public ServletRegistrationBean<HystrixMetricsStreamServlet> servletRegistrationBean(){
 
-        return new ServletRegistrationBean(new HystrixMetricsStreamServlet(), "hystrix.stream");
+        return new ServletRegistrationBean<>(new HystrixMetricsStreamServlet(), "/hystrix.stream");
     }
 }

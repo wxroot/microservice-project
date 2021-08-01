@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import java.util.List;
 
 @Service
-@FeignClient(name = "APPLICATION-BASIC-8001", path = "/school", fallbackFactory = SchoolServiceFeignFallback.class)
+@FeignClient(name = "APPLICATION-ZUUL-9000/basic", path = "/school")
 public interface SchoolServiceFeign {
 
     @GetMapping("/lists")
