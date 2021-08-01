@@ -1,0 +1,8 @@
+#IDEA ignore
+/.idea/
+
+#Project output
+**/target/
+
+#Log ignore
+*.log
