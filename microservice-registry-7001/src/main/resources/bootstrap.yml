@@ -1,0 +1,11 @@
+spring:
+  cloud:
+    config:
+      #SpringCloud Config服务地址
+      uri: http://MicroserviceConfig3344.com:3344
+      #版本库分支
+      label: master
+      #文件名称
+      name: MicroserviceRegistry7001
+      #配置文件环境
+      profile: default
