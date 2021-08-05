@@ -11,4 +11,8 @@
     <select id="queryAll" resultMap="resultMapSchool">
         SELECT * FROM SCHOOL_INFO school
     </select>
+
+    <select id="queryInfoById" resultMap="resultMapSchool">
+        SELECT * FROM SCHOOL_INFO school WHERE school.ID = #{id}
+    </select>
 </mapper>

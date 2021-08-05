@@ -10,4 +10,6 @@ import java.util.List;
 public interface SchoolMapper {
 
     List<SchoolInfo> queryAll();
+
+    SchoolInfo queryInfoById(String id);
 }

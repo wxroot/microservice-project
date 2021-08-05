@@ -1,7 +1,7 @@
 package cn.wxroot.controller;
 
 import cn.wxroot.feignClient.microserviceBasic.SchoolServiceFeign;
-import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
+import cn.wxroot.pojo.SchoolInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
@@ -29,6 +29,12 @@ public class ConsumerController {
 
     @Autowired
     private DiscoveryClient discoveryClient;
+
+    @GetMapping("/school/{id}")
+    public SchoolInfo getInfoById(@PathVariable("id") String id) {
+
+        return schoolFeignService.getInfoById(id);
+    }
 
     @GetMapping("/school/lists")
     public List schoolLists() {

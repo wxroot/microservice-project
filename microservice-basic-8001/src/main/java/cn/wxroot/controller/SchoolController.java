@@ -4,6 +4,7 @@ import cn.wxroot.dao.SchoolMapper;
 import cn.wxroot.pojo.SchoolInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -20,5 +21,11 @@ public class SchoolController {
     public List<SchoolInfo> lists() {
 
         return schoolMapper.queryAll();
+    }
+
+    @GetMapping("/{id}")
+    public SchoolInfo getInfoById(@PathVariable("id") String id) {
+
+        return schoolMapper.queryInfoById(id);
     }
 }

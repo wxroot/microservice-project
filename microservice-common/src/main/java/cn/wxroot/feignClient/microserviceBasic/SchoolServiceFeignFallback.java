@@ -17,11 +17,22 @@ public class SchoolServiceFeignFallback implements FallbackFactory<SchoolService
     @Override
     public SchoolServiceFeign create(Throwable throwable) {
 
-        return () -> {
+        return new SchoolServiceFeign() {
+            @Override
+            public SchoolInfo getInfoById(String id) {
 
-            logger.warn("SchoolServiceFeign_lists fallback");
+                logger.warn("SchoolServiceFeign_getInfoById fallback");
 
-            return new ArrayList<>();
+                return null;
+            }
+
+            @Override
+            public List<SchoolInfo> lists() {
+
+                logger.warn("SchoolServiceFeign_lists fallback");
+
+                return new ArrayList<>();
+            }
         };
     }
 }
